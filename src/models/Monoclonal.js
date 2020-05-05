@@ -9,7 +9,7 @@ const MonoclonalSchema = new mongoose.Schema({
     cycles: String,
     risk: String,
     infusionTime: String,
-    preMedication: String,
+    premedication: String,
     filter: String,
     photosensibility: String,
     other: String,

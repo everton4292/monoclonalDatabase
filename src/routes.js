@@ -1,13 +1,11 @@
-const express = require('express');
-const multer = require('multer');
-const uploadConfig = require('./config/upload');
+const { Router } = require('express')
 
 const MonoclonalController = require('./controllers/MonoclonalController');
 
 
+const routes = Router()
 
-const routes = express.Router();
-const upload = multer(uploadConfig);
+
 
 routes.post('/monoclonal', MonoclonalController.create);
 
