@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const path = require('path');
+var mongoConnect = require('./secrets/credentials')
 
 const routes = require('./routes');
 const http = require('http')
@@ -11,10 +11,7 @@ const app = express();
 const server = http.Server(app)
 
 
-mongoose.connect('mongodb+srv://everton42:34773132@cluster0-epaxc.mongodb.net/test?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
+mongoConnect.data.connect()
 
 mongoose.connection.on("open", function(ref) {
   return console.log("Connected to mongo server.");
